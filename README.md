@@ -1,4 +1,3 @@
-```markdown
 # Computer Vision Thesis Preparation
 
 A seven-day practical preparation project for computer vision and deep learning.
@@ -24,4 +23,3 @@ Set up a reproducible PyTorch development environment and verify the complete tr
 - `practice_fashion_mnist.py`
 
 The baseline script will be extended into a modular CNN training pipeline.
-```
