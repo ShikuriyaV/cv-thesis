@@ -1,21 +1,27 @@
-# CV Thesis Learning
+```markdown
+# Computer Vision Thesis Preparation
 
-This repository records my preparation for a computer vision thesis project.
+A seven-day practical preparation project for computer vision and deep learning.
 
-## Day 1: PyTorch Environment Setup
+## Day 1 — Environment and Baseline
 
-### Environment
+### Purpose
 
-- Python 3.11.15
-- PyTorch 2.12.1
-- CUDA 13.2
-- NVIDIA GeForce RTX 4070 Laptop GPU
-- Conda environment: `cv-thesis`
+Set up a reproducible PyTorch development environment and verify the complete training workflow.
 
-### Environment Verification
+### Results
 
-Run:
+- PyTorch with CUDA successfully configured
+- NVIDIA RTX 4070 GPU verified
+- FashionMNIST baseline training completed
+- Validation accuracy: **82.65%**
+- Test accuracy: **81.64%**
+- Git and GitHub repository established
 
-```bash
-conda activate cv-thesis
-python environment_test.py
+### Files
+
+- `environment_test.py`
+- `practice_fashion_mnist.py`
+
+The baseline script will be extended into a modular CNN training pipeline.
+```
