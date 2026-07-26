@@ -62,3 +62,10 @@ Detailed notes are available in `notes/training_pipeline.md`.
 * Best validation accuracy: **98.75%**
 * Test accuracy: **95.23%**
 
+## Model Evaluation and Error Analysis
+
+* Added test evaluation with accuracy, macro-F1, weighted-F1, and class-wise metrics.
+* Generated training curves, a confusion matrix, a classification report, and correct/incorrect prediction samples.
+* Achieved **97.99% test accuracy** and **97.98% macro-F1** with the best ResNet18 model.
+* Identified Persian and Abyssinian as the most frequently confused classes.
+* Documented overfitting, data augmentation, class imbalance, and possible model improvements.
