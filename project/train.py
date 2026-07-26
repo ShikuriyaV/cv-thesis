@@ -1,3 +1,6 @@
+import json
+from pathlib import Path
+
 import torch
 from torch import nn
 
@@ -99,6 +102,8 @@ def main():
     learning_rate = 0.001
     num_epochs = 10
     checkpoint_path = "project/checkpoints/best_model.pth"
+    history_path = Path("results/training_history.json")
+    history_path.parent.mkdir(parents=True, exist_ok=True)
 
     device = get_device()
 
@@ -129,6 +134,13 @@ def main():
     best_val_accuracy = 0.0
     best_epoch = 0
 
+    history = {
+    "train_losses": [],
+    "val_losses": [],
+    "train_accuracies": [],
+    "val_accuracies": [],
+    }
+
     for epoch in range(1, num_epochs + 1):
         train_loss, train_accuracy = train_one_epoch(
             model=model,
@@ -144,6 +156,11 @@ def main():
             criterion=criterion,
             device=device,
         )
+
+        history["train_losses"].append(train_loss)
+        history["val_losses"].append(val_loss)
+        history["train_accuracies"].append(train_accuracy)
+        history["val_accuracies"].append(val_accuracy)
 
         print(
             f"Epoch [{epoch}/{num_epochs}] | "
@@ -166,6 +183,11 @@ def main():
                 f"Best model saved: "
                 f"Validation Accuracy = {best_val_accuracy:.4f}"
             )
+
+    with history_path.open("w", encoding="utf-8") as file:
+        json.dump(history, file, indent=4)
+
+    print(f"Training history saved: {history_path}")
 
     print("\nTraining completed.")
     print(f"Best epoch: {best_epoch}")

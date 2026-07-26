@@ -1,0 +1,14 @@
+Test Accuracy: 0.9799
+Macro-F1: 0.9798
+Weighted-F1: 0.9798
+
+              precision    recall  f1-score   support
+
+  Abyssinian     0.9600    0.9796    0.9697        98
+     Persian     0.9896    0.9500    0.9694       100
+      Beagle     0.9804    1.0000    0.9901       100
+         Pug     0.9900    0.9900    0.9900       100
+
+    accuracy                         0.9799       398
+   macro avg     0.9800    0.9799    0.9798       398
+weighted avg     0.9801    0.9799    0.9798       398
