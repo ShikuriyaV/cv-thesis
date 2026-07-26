@@ -2,7 +2,7 @@
 
 A seven-day practical preparation project for computer vision and deep learning.
 
-## Day 1 — Environment and Baseline
+## 1 — Environment and Baseline
 
 ### Purpose
 
@@ -24,7 +24,7 @@ Set up a reproducible PyTorch development environment and verify the complete tr
 
 The baseline script will be extended into a modular CNN training pipeline.
 
-## Day 2 — CNN Training Pipeline
+## 2 — CNN Training Pipeline
 
 Implemented a basic CIFAR-10 image-classification pipeline with PyTorch.
 
@@ -51,3 +51,14 @@ practice/
 ```
 
 Detailed notes are available in `notes/training_pipeline.md`.
+
+## 3 — ResNet18 Transfer Learning
+
+* Built a 4-class image classifier using a pretrained ResNet18.
+* Used Oxford-IIIT Pet classes: Abyssinian, Persian, Beagle, and Pug.
+* Froze the ResNet18 backbone and trained only the classification head.
+* Applied data augmentation and ImageNet normalization.
+* Saved the model with the best validation accuracy.
+* Best validation accuracy: **98.75%**
+* Test accuracy: **95.23%**
+
