@@ -23,3 +23,31 @@ Set up a reproducible PyTorch development environment and verify the complete tr
 - `practice_fashion_mnist.py`
 
 The baseline script will be extended into a modular CNN training pipeline.
+
+## Day 2 — CNN Training Pipeline
+
+Implemented a basic CIFAR-10 image-classification pipeline with PyTorch.
+
+* Built a simple CNN for image feature extraction and classification
+* Created training, validation, and test DataLoaders
+* Implemented training and validation loops
+* Saved the model with the best validation accuracy
+* Evaluated the saved model on the test set
+
+**Results**
+
+* Best validation accuracy: 64.92%
+* Test accuracy: 64.96%
+
+Main files:
+
+```text
+practice/
+├── dataset.py
+├── model.py
+├── train.py
+├── evaluate.py
+└── best_model.pth
+```
+
+Detailed notes are available in `notes/training_pipeline.md`.
