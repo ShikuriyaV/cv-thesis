@@ -1,0 +1,9 @@
+timestamp,frame_id,predicted_class,confidence
+0.00,0,Abyssinian,0.9404
+1.00,25,Abyssinian,0.9352
+2.00,50,Beagle,0.8941
+3.00,75,Beagle,0.8855
+4.00,100,Persian,0.8663
+5.00,125,Persian,0.8483
+6.00,150,Pug,0.8953
+7.00,175,Pug,0.8754

@@ -60,12 +60,43 @@ Detailed notes are available in `notes/training_pipeline.md`.
 * Applied data augmentation and ImageNet normalization.
 * Saved the model with the best validation accuracy.
 * Best validation accuracy: **98.75%**
-* Test accuracy: **95.23%**
 
-## Model Evaluation and Error Analysis
+
+## 4 — Model Evaluation and Error Analysis
 
 * Added test evaluation with accuracy, macro-F1, weighted-F1, and class-wise metrics.
 * Generated training curves, a confusion matrix, a classification report, and correct/incorrect prediction samples.
 * Achieved **97.99% test accuracy** and **97.98% macro-F1** with the best ResNet18 model.
 * Identified Persian and Abyssinian as the most frequently confused classes.
 * Documented overfitting, data augmentation, class imbalance, and possible model improvements.
+
+## 5 — Video Processing
+
+The project includes a basic frame-level video inference pipeline using OpenCV.
+
+The pipeline can:
+
+* Read a video and extract its FPS, total frame count, resolution, and duration;
+* Sample frames at a fixed interval;
+* Apply the trained ResNet18 model to individual frames;
+* Save timestamps, frame IDs, predicted classes, and confidence scores to CSV.
+
+Run the demo with:
+
+```bash
+python -m project.make_demo_video
+python -m project.video_info
+python -m project.infer_video
+```
+
+The prediction results are saved to:
+
+```text
+results/video_predictions.csv
+```
+
+### Limitation
+
+This demo performs frame-level classification and does not model temporal dependencies across consecutive frames.
+
+The current model processes every sampled frame independently. Future work could use CNN-LSTM, TCN, or Transformer-based methods for temporal modelling.
