@@ -10,6 +10,7 @@ from project.utils import (
     get_device,
     load_model,
     save_model,
+    set_seed,
 )
 
 def train_one_epoch(
@@ -98,6 +99,8 @@ def evaluate(
     return average_loss, accuracy
 
 def main():
+    set_seed(42)
+
     batch_size = 32
     learning_rate = 0.001
     num_epochs = 10

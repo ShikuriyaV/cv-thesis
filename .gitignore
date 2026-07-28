@@ -7,11 +7,15 @@ __pycache__/
 venv/
 env/
 
-# Datasets and trained models
+# Datasets
 data/
+project/data/
+
+# Trained models and checkpoints
 models/
 *.pt
 *.pth
+project/checkpoints/
 
 # Jupyter
 .ipynb_checkpoints/
@@ -23,13 +27,3 @@ models/
 # System files
 .DS_Store
 Thumbs.db
-
-# Downloaded datasets
-project/data/
-
-# Model checkpoints
-project/checkpoints/*.pth
-
-# Python cache
-__pycache__/
-*.pyc

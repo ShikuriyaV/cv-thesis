@@ -1,3 +1,4 @@
+import argparse
 from PIL import Image, ImageDraw
 from torchvision.transforms.functional import to_pil_image
 
@@ -25,7 +26,7 @@ from project.dataset import (
 from project.utils import build_model, get_device, load_model
 
 
-CHECKPOINT_PATH = Path(
+DEFAULT_CHECKPOINT_PATH = Path(
     "project/checkpoints/best_model.pth"
 )
 
@@ -403,6 +404,22 @@ def save_sample_predictions(
     print(f"Sample predictions saved: {output_path}")
 
 def main() -> None:
+    parser = argparse.ArgumentParser(
+        description="Evaluate a trained ResNet18 model on the test dataset."
+    )
+    parser.add_argument(
+        "--checkpoint",
+        type=Path,
+        default=DEFAULT_CHECKPOINT_PATH,
+        help="Path to the trained model checkpoint.",
+    )
+    args = parser.parse_args()
+
+    if not args.checkpoint.exists():
+        raise FileNotFoundError(
+            f"Checkpoint file not found: {args.checkpoint}"
+        )
+
     device = get_device()
 
     _, _, test_loader = build_dataloaders(
@@ -416,7 +433,7 @@ def main() -> None:
 
     load_model(
         model=model,
-        checkpoint_path=str(CHECKPOINT_PATH),
+        checkpoint_path=str(args.checkpoint),
         device=device,
     )
 
